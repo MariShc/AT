@@ -9,9 +9,22 @@ public class Kotik {
     private int age;
 
     private int satiety = 10;
-    private String food = "food";
 
     private static int countObjects = 0;
+
+    public Kotik() {
+        countObjects++;
+    }
+
+    public Kotik(int prettiness, String name, String color, int weight, String meow, int age) {
+        this.prettiness = prettiness;
+        this.name = name;
+        this.color = color;
+        this.weight = weight;
+        this.meow = meow;
+        this.age = age;
+        countObjects++;
+    }
 
     public void setPrettiness(int prettiness) {
         this.prettiness = prettiness;
@@ -117,6 +130,7 @@ public class Kotik {
     }
 
     public void eat(int satiety) {
+        final String food = "a pizza";
         this.satiety += satiety;
         System.out.println("Ate " + food + "!");
     }
@@ -163,20 +177,6 @@ public class Kotik {
     public static void countKotiks() {
         System.out.println("------------------------------------");
         System.out.println(countObjects + " kotiks created");
-    }
-
-    public Kotik() {
-        countObjects++;
-    }
-
-    public Kotik(int prettiness, String name, String color, int weight, String meow, int age) {
-        this.prettiness = prettiness;
-        this.name = name;
-        this.color = color;
-        this.weight = weight;
-        this.meow = meow;
-        this.age = age;
-        countObjects++;
     }
 
     public void setKotik(int prettiness, String name, String color, int weight, String meow, int age) {
