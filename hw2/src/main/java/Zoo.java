@@ -1,6 +1,7 @@
 import animals.*;
 import food.Grass;
 import food.Meat;
+import interfaces.Swim;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,36 +27,9 @@ public class Zoo {
         worker.feed(fish1, grass);
         worker.getVoice(crocodile);
         worker.getVoice(lion);
-        //worker.getVoice(fish1);
 
-        ArrayList<Animal> pond = new ArrayList<Animal>(Arrays.asList(duck1, duck2, fish1, fish2));
-        for (Animal animal : pond) {
-            switch (animal.typeAnimal()) {
-                case "Crocodile":
-                    new Crocodile(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-                case "Duck":
-                    new Duck(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-                case "Lion":
-                    new Lion(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-                case "Rabbit":
-                    new Rabbit(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-                case "Wolf":
-                    new Wolf(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-                case "Fish":
-                    new Fish(animal.getName(), animal.getWeight(),
-                            animal.getAge(), animal.getColor()).swim();
-                    break;
-            }
-        }
+        ArrayList<Swim> pond = new ArrayList<>(Arrays.asList(duck1, duck2, fish1, fish2));
+        for (Swim animal : pond)
+            animal.swim();
     }
 }

@@ -11,15 +11,21 @@ public abstract class Animal {
 
     public abstract boolean eat(Food food);
 
-    public abstract String getName();
+    public String getName() {
+        return name;
+    }
 
-    public abstract double getWeight();
+    public double getWeight() {
+        return weight;
+    }
 
-    public abstract int getAge();
+    public int getAge() {
+        return age;
+    }
 
-    public abstract String getColor();
-
-    public abstract String typeAnimal();
+    public String getColor() {
+        return color;
+    }
 
     public abstract void addSatiety();
 }

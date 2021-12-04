@@ -5,17 +5,6 @@ import interfaces.Swim;
 import interfaces.Voice;
 
 public class Lion extends Carnivore implements Run, Swim, Voice {
-    public void run() {
-        System.out.println(this.name + " can run!");
-    }
-
-    public void swim() {
-        System.out.println(this.name + " can swim!");
-    }
-
-    public String voice() {
-        return "Roar!";
-    }
 
     public Lion() {
     }
@@ -27,24 +16,16 @@ public class Lion extends Carnivore implements Run, Swim, Voice {
         this.color = color;
     }
 
-    public String getName() {
-        return name;
+    public void run() {
+        System.out.println(this.name + " can run!");
     }
 
-    public double getWeight() {
-        return weight;
+    public void swim() {
+        System.out.println(this.name + " can swim!");
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String typeAnimal() {
-        return "Lion";
+    public String voice() {
+        return "Roar!";
     }
 
     public void addSatiety() {

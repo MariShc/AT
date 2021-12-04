@@ -4,10 +4,6 @@ import interfaces.Swim;
 
 public class Fish extends Herbivore implements Swim {
 
-    public void swim() {
-        System.out.println(this.name + " can swim!");
-    }
-
     public Fish() {
     }
 
@@ -18,24 +14,8 @@ public class Fish extends Herbivore implements Swim {
         this.color = color;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String typeAnimal() {
-        return "Fish";
+    public void swim() {
+        System.out.println(this.name + " can swim!");
     }
 
     public void addSatiety() {

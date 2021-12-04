@@ -2,28 +2,19 @@ package animals;
 
 import food.Food;
 import food.Grass;
+import food.Meat;
 
 public abstract class Herbivore extends Animal {
 
     public final boolean eat(Food food) {
-        if (food instanceof Grass) {
-            System.out.println("This animal eat a grass.");
-            return true;
-        } else {
+        if (!(food instanceof Grass)) {
             System.out.println("Herbivore animals don't eat а meat!");
             return false;
         }
+        System.out.println("This animal eat a grass.");
+        this.addSatiety();
+        return true;
     }
-
-    public abstract String getName();
-
-    public abstract double getWeight();
-
-    public abstract int getAge();
-
-    public abstract String getColor();
-
-    public abstract String typeAnimal();
 
     public abstract void addSatiety();
 }

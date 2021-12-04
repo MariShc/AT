@@ -5,17 +5,6 @@ import interfaces.Swim;
 import interfaces.Voice;
 
 public class Rabbit extends Herbivore implements Run, Swim, Voice {
-    public void run() {
-        System.out.println(this.name + " can run!");
-    }
-
-    public void swim() {
-        System.out.println(this.name + " can swim!");
-    }
-
-    public String voice() {
-        return "Pipipii!";
-    }
 
     public Rabbit() {
     }
@@ -27,24 +16,16 @@ public class Rabbit extends Herbivore implements Run, Swim, Voice {
         this.color = color;
     }
 
-    public String getName() {
-        return name;
+    public void run() {
+        System.out.println(this.name + " can run!");
     }
 
-    public double getWeight() {
-        return weight;
+    public void swim() {
+        System.out.println(this.name + " can swim!");
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String typeAnimal() {
-        return "Rabbit";
+    public String voice() {
+        return "Pipipii!";
     }
 
     public void addSatiety() {
