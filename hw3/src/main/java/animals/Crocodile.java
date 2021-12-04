@@ -5,13 +5,6 @@ import interfaces.Swim;
 import interfaces.Voice;
 
 public class Crocodile extends Carnivore implements Swim, Voice {
-    public void swim() {
-        System.out.println(this.name + " can swim!");
-    }
-
-    public String voice() {
-        return "Rrrrr!";
-    }
 
     public Crocodile() {
     }
@@ -21,27 +14,15 @@ public class Crocodile extends Carnivore implements Swim, Voice {
         this.weight = weight;
         this.age = age;
         this.color = color;
-        this.aviarySize = AviarySize.EXTRA_LARGE;
+        this.size = AviarySize.EXTRA_LARGE;
     }
 
-    public String getName() {
-        return name;
+    public void swim() {
+        System.out.println(this.name + " can swim!");
     }
 
-    public double getWeight() {
-        return weight;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String typeAnimal() {
-        return "Crocodile";
+    public String voice() {
+        return "Rrrrr!";
     }
 
     public void addSatiety() {

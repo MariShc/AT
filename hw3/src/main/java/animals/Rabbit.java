@@ -6,6 +6,18 @@ import interfaces.Swim;
 import interfaces.Voice;
 
 public class Rabbit extends Herbivore implements Run, Swim, Voice {
+
+    public Rabbit() {
+    }
+
+    public Rabbit(String name, double weight, int age, String color) {
+        this.name = name;
+        this.weight = weight;
+        this.age = age;
+        this.color = color;
+        this.size = AviarySize.MEDIUM;
+    }
+
     public void run() {
         System.out.println(this.name + " can run!");
     }
@@ -16,37 +28,6 @@ public class Rabbit extends Herbivore implements Run, Swim, Voice {
 
     public String voice() {
         return "Pipipii!";
-    }
-
-    public Rabbit() {
-    }
-
-    public Rabbit(String name, double weight, int age, String color) {
-        this.name = name;
-        this.weight = weight;
-        this.age = age;
-        this.color = color;
-        this.aviarySize = AviarySize.MEDIUM;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String typeAnimal() {
-        return "Rabbit";
     }
 
     public void addSatiety() {
