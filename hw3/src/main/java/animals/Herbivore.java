@@ -12,6 +12,4 @@ public abstract class Herbivore extends Animal {
         System.out.println("This animal eat a grass.");
         this.addSatiety();
     }
-
-    public abstract void addSatiety();
 }

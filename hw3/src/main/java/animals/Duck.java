@@ -17,6 +17,7 @@ public class Duck extends Herbivore implements Fly, Run, Swim, Voice {
         this.age = age;
         this.color = color;
         this.size = AviarySize.MEDIUM;
+        this.satiety = 10;
     }
 
     public void fly() {
@@ -33,10 +34,5 @@ public class Duck extends Herbivore implements Fly, Run, Swim, Voice {
 
     public String voice() {
         return "Quack!";
-    }
-
-    public void addSatiety() {
-        this.satiety += 10;
-        System.out.println("Satiety for " + this.name + " = " + satiety);
     }
 }

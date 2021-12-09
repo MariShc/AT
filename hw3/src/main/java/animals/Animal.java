@@ -11,7 +11,7 @@ public abstract class Animal {
     protected double weight;
     protected int age;
     protected String color;
-    protected int satiety = 0;
+    protected int satiety;
     protected AviarySize size;
 
     public abstract void eat(Food food) throws WrongFoodException;
@@ -32,7 +32,10 @@ public abstract class Animal {
         return color;
     }
 
-    public abstract void addSatiety();
+    public void addSatiety() {
+        satiety += this.satiety;
+        System.out.println("Satiety for " + this.name + " = " + satiety);
+    }
 
     public AviarySize getSize() {
         return size;
@@ -47,10 +50,12 @@ public abstract class Animal {
     public boolean equals(Object obj) {
         if (obj == null) return false;
 
-        if (obj.getClass() == this.getClass())
-            return true;
+        if (this.getClass() != obj.getClass()) return false;
 
-        return this.name == ((Animal) obj).name;
+        if (this.getClass() == obj.getClass())
+            return this.name == ((Animal) obj).name;
+
+        return true;
     }
 
     @Override

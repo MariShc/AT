@@ -12,6 +12,4 @@ public abstract class Carnivore extends Animal {
         System.out.println("This animal eat a meat.");
         this.addSatiety();
     }
-
-    public abstract void addSatiety();
 }

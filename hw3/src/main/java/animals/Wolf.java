@@ -16,6 +16,7 @@ public class Wolf extends Carnivore implements Run, Swim, Voice {
         this.age = age;
         this.color = color;
         this.size = AviarySize.LARGE;
+        this.satiety = 20;
     }
 
     public void run() {
@@ -28,10 +29,5 @@ public class Wolf extends Carnivore implements Run, Swim, Voice {
 
     public String voice() {
         return "Woooow!";
-    }
-
-    public void addSatiety() {
-        this.satiety += 20;
-        System.out.println("Satiety for " + this.name + " = " + satiety);
     }
 }
