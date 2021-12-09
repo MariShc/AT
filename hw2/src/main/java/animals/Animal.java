@@ -7,7 +7,7 @@ public abstract class Animal {
     protected double weight;
     protected int age;
     protected String color;
-    protected int satiety = 0;
+    protected int satiety;
 
     public abstract boolean eat(Food food);
 
@@ -27,5 +27,8 @@ public abstract class Animal {
         return color;
     }
 
-    public abstract void addSatiety();
+    public void addSatiety() {
+        satiety += this.satiety;
+        System.out.println("Satiety for " + this.name + " = " + satiety);
+    }
 }

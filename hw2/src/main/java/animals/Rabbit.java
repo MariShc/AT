@@ -14,6 +14,7 @@ public class Rabbit extends Herbivore implements Run, Swim, Voice {
         this.weight = weight;
         this.age = age;
         this.color = color;
+        this.satiety = 10;
     }
 
     public void run() {
@@ -26,10 +27,5 @@ public class Rabbit extends Herbivore implements Run, Swim, Voice {
 
     public String voice() {
         return "Pipipii!";
-    }
-
-    public void addSatiety() {
-        this.satiety += 10;
-        System.out.println("Satiety for " + this.name + " = " + satiety);
     }
 }

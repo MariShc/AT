@@ -15,6 +15,4 @@ public abstract class Herbivore extends Animal {
         this.addSatiety();
         return true;
     }
-
-    public abstract void addSatiety();
 }

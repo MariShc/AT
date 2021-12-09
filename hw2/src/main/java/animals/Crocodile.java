@@ -13,6 +13,7 @@ public class Crocodile extends Carnivore implements Swim, Voice {
         this.weight = weight;
         this.age = age;
         this.color = color;
+        this.satiety = 20;
     }
 
     public void swim() {
@@ -21,10 +22,5 @@ public class Crocodile extends Carnivore implements Swim, Voice {
 
     public String voice() {
         return "Rrrrr!";
-    }
-
-    public void addSatiety() {
-        this.satiety += 20;
-        System.out.println("Satiety for " + this.name + " = " + satiety);
     }
 }

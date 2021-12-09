@@ -14,6 +14,4 @@ public abstract class Carnivore extends Animal {
         this.addSatiety();
         return true;
     }
-
-    public abstract void addSatiety();
 }
