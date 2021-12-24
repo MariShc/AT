@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -19,22 +20,29 @@ public class PageAvito extends PageSome {
         driver.get("https://www.avito.ru/");
     }
 
+    public void getScreenshot(WebDriver driver) {
+        takeScreenshot(driver);
+    }
+
     public void selectCategory(String category) {
         select(driver.findElement(By.cssSelector("#category")))
-                .selectByValue(category);
+                .selectByVisibleText(category);
     }
 
     public void inputTextArea(String text) {
         WebElement textArea = driver.findElement(By.cssSelector("input[autocomplete = 'off'][maxlength = '100']"));
         textArea.click();
         textArea.sendKeys(text);
+        driver.findElement(By.cssSelector("#app>div")).click();
     }
 
-    public void searchForCity(String city) {
+    public void clickOnFieldCity() {
         WebElement locationSelect = driver.findElement
                 (By.xpath("//div[contains(@data-marker,'search-form/region')]"));
         locationSelect.click();
+    }
 
+    public void searchForCity(String city) {
         WebElement location = wait.until(ExpectedConditions.visibilityOfElementLocated
                 (By.cssSelector("input[data-marker = 'popup-location/region/input']")));
         location.sendKeys(city);
@@ -48,6 +56,9 @@ public class PageAvito extends PageSome {
                 break;
             }
         }
+    }
+
+    public void clickOnButton() {
         WebElement searchOnLocationField = driver.findElement
                 (By.xpath("//button[contains(@data-marker,'save-button')]"));
         searchOnLocationField.click();
@@ -55,21 +66,23 @@ public class PageAvito extends PageSome {
 
     public void checkbox() {
         WebElement checkBoxStatus = wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.xpath("//span[contains(@data-marker,'delivery-filter')]")));
+                (By.xpath("//span[text()=\"только с фото\"]")));
         if (!checkBoxStatus.isSelected())
             checkBoxStatus.click();
-        WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.xpath("//button[contains(@data-marker,'search-filters/submit-button')]")));
-        submitButton.click();
     }
 
-    public void filter(String value) {
+    public void checkOpenedPage(String word) {
+        Assert.assertTrue(driver.findElement(By.cssSelector("h1[data-marker = 'page-title/text']"))
+                .getText().contains(word), "Значение не равны!");
+    }
+
+    public void selectFilter(String sortValue) {
         select(driver.findElement
                 (By.cssSelector("div.index-topPanel-McfCA  select.select-select-IdfiC")))
-                .selectByValue(value);
+                .selectByVisibleText(sortValue);
     }
 
-    public void nameAndPrice() {
+    public void nameAndPrice(int count) {
         List<WebElement> printersNames;
         List<WebElement> printersPrices;
 
@@ -78,7 +91,7 @@ public class PageAvito extends PageSome {
 
         printersPrices = driver.findElements
                 (By.xpath("//span[@data-marker='item-price']/span[contains(@class,'price')]"));
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < count; i++) {
             System.out.println(printersNames.get(i).getText());
             System.out.println(printersPrices.get(i).getText());
             System.out.println();

@@ -1,12 +1,11 @@
-import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "steps",
-        tags = "@1",
-        snippets = SnippetType.UNDERSCORE
+        tags = "@test",
+        snippets = CucumberOptions.SnippetType.UNDERSCORE
 )
 
 public class RunnerTest extends AbstractTestNGCucumberTests {
