@@ -6,11 +6,11 @@ public class Main {
         Calculator calculator = new Calculator();
         Scanner in = new Scanner(System.in);
 
-        Object a = getNumber("a");
-        Object b = getNumber("b");
-        Object c_sum = calculator.sum(a, b);
-        Object c_sub = calculator.sub(a, b);
-        Object c_mult = calculator.multiply(a, b);
+        double a = getNumber("a");
+        double b = getNumber("b");
+        double c_sum = calculator.sum(a, b);
+        double c_sub = calculator.sub(a, b);
+        double c_mult = calculator.multiply(a, b);
         Object c_dev = calculator.divide(a, b);
 
         System.out.println("Сумма: " + c_sum);
